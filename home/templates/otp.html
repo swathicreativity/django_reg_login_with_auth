@@ -1,16 +1,61 @@
-<center><strong>CONFRIM YOUR ACCOUNT</strong></center>
+<html>
+    <head>
+        <title>Otp Validation Page</title>
+        <style>
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+            button{
+                background-color: #4CAF50;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=email],input[type=password]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            button:hover{
+                opacity:0.7;
 
-<center><p>check the inbox of your email - {{email}} - and enter the otp<p></center>
-
+            }
+</style>
+</head>
 <body>
+<div style="text-align: center;">
+<strong>CONFRIM YOUR ACCOUNT</strong><br/>
+
+<p>check the inbox of your email - {{email}} - and enter the otp<p>
+
     <form action="otp_verification" method="POST">
         {% csrf_token %}
-        <center>Enter the otp : <input type="text" placeholder="enter the otp" name="otp"></center><br><br>
-        <center><button type="submit">verify</button></center>
+        
+        <label for ='email'><b>Enter the otp : </b></label><br/> 
+        <input type="text" placeholder="enter the otp" name="otp"><br/>
+        <button type="submit">verify</button>
     </form>
+</div>
 </body>
-
-
+</html>
 {%if messages%}
 {%for message in messages%}
 <script>alert('{{message}}')</script>

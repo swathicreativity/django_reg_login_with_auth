@@ -36,7 +36,7 @@ def signup_page(request):
             nameuser=User(username=request.session['username'],email=request.session['email'],password=encryptedpassword)
             nameuser.save()
             messages.info(request,'Registered in successfully...')
-            return redirect('http://localhost:8000/')
+            return redirect('signin')
     return render (request,'signup.html')
 
 def signin_verification(request):
